@@ -1,0 +1,4 @@
+# The lab environment image: one workload generator and nothing else.
+FROM docker.io/library/ubuntu:24.04
+RUN apt-get update -q && DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends stress-ng curl ca-certificates && rm -rf /var/lib/apt/lists/*
+CMD ["/bin/sh"]
