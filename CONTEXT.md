@@ -73,3 +73,33 @@ _Avoid_: "definition of done," "success criteria"
 What to do when the phase's acceptance cannot be reached on the tier at hand — the honest fallback,
 written before it is needed.
 _Avoid_: "workaround," "plan B"
+
+**Responsibility Item**:
+One duty from the chain, concrete enough that the line between what a person decides and what
+a model executes can be drawn through it and argued — a row in the **Agent Boundary Ledger**.
+Taken from a **Runbook** hop, never invented for the ledger. In this chain the duty belongs to
+the *operator's* agent, not to the agent being sandboxed; the ledger's first paragraph says so.
+_Avoid_: "task," "duty," "use case," "job"
+
+**Agent Boundary Ledger** (`AGENT_BOUNDARY.md`):
+One row per **Responsibility Item**, four lines each — *Human decides / Agent executes / How /
+How you know it worked* — and a **model line**: the exact model identifier, where it ran, the
+date. A row is 🔨 only when an **Agent Run** stands behind it; a model that did not run the
+task has no line; when a model generation changes the old line stays and a new one is added,
+because the ledger's payload is the boundary *moving*. A model line older than 90 days, or from
+a superseded generation, is ⏳ until re-run (ADR-0002).
+_Avoid_: "AI policy," "automation matrix," "capability map," "what AI can do"
+
+**Agent Run**:
+One file in `lab/agent-runs/` — the command, the model as the endpoint reported it, the task
+and acceptance verbatim, the complete transcript, and the pass/fail against the acceptance.
+Made through an agent CLI when the responsibility needs tools, through the bare API when it
+does not, and the file says which. It is the credential behind a ledger row, screened for
+secrets before it is committed.
+_Avoid_: "experiment," "eval," "benchmark," "demo"
+
+**Verification row** (rule, ADR-0002):
+A command and what it must return. Every row in the phases that ran already is one; the rule is
+recorded so it binds what is written next. Sections written after 2026-09-15 open with *Before
+you start · Permissions · Minimum test · Verify · Rollback*.
+_Avoid_: "manual check," "eyeball," "confirm in the UI"

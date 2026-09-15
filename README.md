@@ -29,6 +29,7 @@ marker below are the author's; the tooling accelerated the writing and the readi
 | **fifteen** | [the chain, hop by hop](docs/00-the-chain.md), then [phase 1](phases/1-isolation/) — three isolation tiers under the same workload, with the overhead of each |
 | **a platform to build** | the runbooks in order, [1](phases/1-isolation/) → [6](phases/6-observability/); the [isolation selection](docs/01-isolation-selection.md) first if the question is *which tier* |
 | **someone to explain it to** | [EXPLAIN.md](EXPLAIN.md) — the same chain with zero jargon |
+| **a model you want to hand part of this to** | [AGENT_BOUNDARY.md](AGENT_BOUNDARY.md) — per responsibility of the *operator's* agent, what a person decides and what a model executes, with the model and the date on every row that was actually tried |
 
 ---
 
